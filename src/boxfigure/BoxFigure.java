@@ -31,6 +31,13 @@ public class BoxFigure {
         Quadrato q1 = new Quadrato(3, new Point2D(3,6));
         
         System.out.println("La codinzione de quadrato e': "+q1.contain(q2.max,q2.min));
+        
+        System.out.println("MISTI\n-----------------");
+        
+        Triangolo grosso = new Triangolo(new Point2D(2,2), new Point2D(12,2), new Point2D(7,12));
+        Quadrato piccolo = new Quadrato(4, new Point2D(5,7));
+        
+        System.out.println("Sara' Quadrato contenuto nel Triangolo ??\n"+grosso.contain(piccolo));
     }
     
 }
