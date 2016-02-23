@@ -26,6 +26,11 @@ public class BoxFigure {
         Triangolo prova2 = new Triangolo(new Point2D(7,2), new Point2D(10,2), new Point2D(10,5));
         
         System.out.println("La codizione e': "+prova1.contain(prova2.getMax(),prova2.getMin()));
+        
+        Quadrato q2 = new Quadrato(7,new Point2D(1,8));
+        Quadrato q1 = new Quadrato(3, new Point2D(3,6));
+        
+        System.out.println("La codinzione de quadrato e': "+q1.contain(q2.max,q2.min));
     }
     
 }
