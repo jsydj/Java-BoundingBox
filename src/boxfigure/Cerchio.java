@@ -28,5 +28,11 @@ public class Cerchio extends BoundingBox{
         return point;
     }
 
+    public Point2D getCentro(){
+        return this.centro;
+    }
     
+    public double getRaggio(){
+        return this.raggio;
+    }
 }
