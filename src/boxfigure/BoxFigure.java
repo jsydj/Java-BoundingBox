@@ -1,6 +1,8 @@
 package boxfigure;
 
+//import java.awt.Graphics;
 import javafx.geometry.Point2D;
+import javax.swing.JFrame;
 
 public class BoxFigure {
 
@@ -26,6 +28,14 @@ public class BoxFigure {
         Quadrato piccolo = new Quadrato(4, new Point2D(5,7));
         
         System.out.println("Sara' Quadrato contenuto nel Triangolo ??\n"+grosso.contain(piccolo));
-    }
+        
+        
+        JFrame f = new JFrame("Title");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        disenga p = new disenga(uno,due);
     
+        f.add(p);
+        f.setSize(400,250);
+        f.setVisible(true);
+    }
 }
