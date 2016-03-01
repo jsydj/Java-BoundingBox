@@ -83,14 +83,12 @@ public class BoxFigure {
      private static void menu(){
         System.out.println("BOUNDING BOX");
         System.out.println("---------------------------------");
-        
         System.out.println("Figure disponibili:");
         System.out.println("\t[0] Cerchio\n\t[1] Quadrto\n\t[2] Triangolo");
         System.out.println("---------------------------------");
 
     }
      private static BoundingBox scelta(int scelta){
-        BoundingBox b = null;
         switch(scelta){
             case 0:
                 double raggio = inputD("Inserisci il raggio: ");
