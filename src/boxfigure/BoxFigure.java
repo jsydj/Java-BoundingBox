@@ -36,6 +36,15 @@ public class BoxFigure {
         else
             System.out.println("La figura 1 NON contiente la figura 2");
         
+        if(figura1 == 0 && figura2 == 0){
+            JFrame f = new JFrame("Title");
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            disenga p = new disenga((Cerchio)a,(Cerchio)b);
+    
+            f.add(p);
+            f.setSize(400,250);
+            f.setVisible(true); 
+        }
         /*
         Cerchio uno = new Cerchio(4,4,10);
         Cerchio due = new Cerchio(7,1,2);

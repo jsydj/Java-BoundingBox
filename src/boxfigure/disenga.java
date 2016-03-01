@@ -15,6 +15,7 @@ public class disenga extends JPanel {
     int raggio1;
     int raggio2;
     final int OFFSET = 20;
+    
     public disenga(Cerchio a, Cerchio b){
         this.centro1 = a.getCentro();
         this.raggio1 = (int)a.getRaggio()*15;
@@ -22,6 +23,7 @@ public class disenga extends JPanel {
         this.centro2 = b.getCentro();
         this.raggio2 = (int)b.getRaggio()*15;
     }
+    
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
