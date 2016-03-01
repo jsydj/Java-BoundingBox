@@ -15,6 +15,7 @@ public class disenga extends JPanel {
     int raggio1;
     int raggio2;
     final int OFFSET = 20;
+    String condizione;
     
     public disenga(Cerchio a, Cerchio b){
         this.centro1 = a.getCentro();
@@ -22,6 +23,8 @@ public class disenga extends JPanel {
         
         this.centro2 = b.getCentro();
         this.raggio2 = (int)b.getRaggio()*15;
+        
+        this.condizione = "cc";
     }
     
     @Override
