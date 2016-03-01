@@ -27,8 +27,15 @@ public class BoxFigure {
             System.exit(2);
         }
         
+        /*
         System.out.println(a.getMax());
         System.out.println(b.getMax());
+        */
+        if(a.contain(b))
+            System.out.println("La figura 1 contiene la figura 2");
+        else
+            System.out.println("La figura 1 NON contiente la figura 2");
+        
         /*
         Cerchio uno = new Cerchio(4,4,10);
         Cerchio due = new Cerchio(7,1,2);
@@ -51,15 +58,17 @@ public class BoxFigure {
         Quadrato piccolo = new Quadrato(4, new Point2D(5,7));
         
         System.out.println("Sara' Quadrato contenuto nel Triangolo ??\n"+grosso.contain(piccolo));
+        */
         
-        
+        /*
         JFrame f = new JFrame("Title");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         disenga p = new disenga(uno,due);
     
         f.add(p);
         f.setSize(400,250);
-        f.setVisible(true); */
+        f.setVisible(true); 
+        */
     }
     
      private static void menu(){
@@ -72,17 +81,19 @@ public class BoxFigure {
 
     }
      private static BoundingBox scelta(int scelta){
-         BoundingBox b = null;
+        BoundingBox b = null;
         switch(scelta){
             case 0:
                 double raggio = inputD("Inserisci il raggio: ");
                 Point2D centro = inputP2D("Inserisci le coordinate del centro: ");
+                
                 return new Cerchio(centro.getX(), centro.getY(), raggio);
                 //System.out.println(centro.getX()+""+centro.getY());
                 
             case 1:
                 double lato = inputD("Inserisci il lato: ");
                 Point2D min = inputP2D("Inserisci le coordinate del punto: ");
+                
                 return new Quadrato(lato, min);
                 //System.out.println(a.calcMax());
                 
@@ -99,6 +110,5 @@ public class BoxFigure {
                 //b = null;
                 return null;
         }
-     }
-    
+     }  
 }
