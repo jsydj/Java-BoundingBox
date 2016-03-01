@@ -26,4 +26,15 @@ public class Triangolo extends BoundingBox{
         return this.b;
     }
     
+    public Point2D getA(){
+        return this.a;
+    }
+    
+    public Point2D getB(){
+        return this.b;
+    }
+    
+    public Point2D getC(){
+        return this.c;
+    }
 }

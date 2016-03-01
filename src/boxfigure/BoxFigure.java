@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 public class BoxFigure {
     //static BoundingBox b;
     public static void main(String[] args) {
-        int figura1;
+        /*int figura1;
         int figura2;
         
         menu();
@@ -30,21 +30,35 @@ public class BoxFigure {
         /*
         System.out.println(a.getMax());
         System.out.println(b.getMax());
-        */
+        
         if(a.contain(b))
             System.out.println("La figura 1 contiene la figura 2");
         else
             System.out.println("La figura 1 NON contiente la figura 2");
+        */
+        JFrame f = new JFrame("Title");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
+        /*
         if(figura1 == 0 && figura2 == 0){
-            JFrame f = new JFrame("Title");
-            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             disenga p = new disenga((Cerchio)a,(Cerchio)b);
-    
             f.add(p);
-            f.setSize(400,250);
-            f.setVisible(true); 
+            
         }
+        else if(figura1 == 0 && figura2 == 2){
+            disenga p = new disenga((Cerchio)a,(Triangolo)b);
+            f.add(p);
+        }
+        */
+        disenga p = new disenga((Cerchio)new Cerchio(7,5,5),(Triangolo)new Triangolo(new Point2D(3,4), new Point2D(7,4),new Point2D(5,8)));
+        f.add(p);
+        
+        f.setSize(400,250);
+        f.setVisible(true);
+        
+        
+        
+        
         /*
         Cerchio uno = new Cerchio(4,4,10);
         Cerchio due = new Cerchio(7,1,2);
