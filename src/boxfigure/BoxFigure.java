@@ -95,7 +95,7 @@ public class BoxFigure {
                 return new Triangolo(a1,b1,c1);
                 
             default:
-                System.err.println("Errore! Figura inesistente.");
+                //System.err.println("Errore! Figura inesistente.");
                 //b = null;
                 return null;
         }
