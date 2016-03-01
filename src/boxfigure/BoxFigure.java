@@ -6,7 +6,7 @@ import javafx.geometry.Point2D;
 import javax.swing.JFrame;
 
 public class BoxFigure {
-   
+    //static BoundingBox b;
     public static void main(String[] args) {
         int figura1;
         int figura2;
@@ -14,66 +14,21 @@ public class BoxFigure {
         menu();
         
         figura1 = inputI("Inserisci la prima figura: ");
-        BoundingBox a = null;
-        switch(figura1){
-            case 0:
-                double raggio = inputD("Inserisci il raggio: ");
-                Point2D centro = inputP2D("Inserisci le coordinate del centro: ");
-                a = new Cerchio(centro.getX(), centro.getY(), raggio);
-                //System.out.println(centro.getX()+""+centro.getY());
-                break;
-            case 1:
-                double lato = inputD("Inserisci il lato: ");
-                Point2D min = inputP2D("Inserisci le coordinate del punto: ");
-                a = new Quadrato(lato, min);
-                //System.out.println(a.calcMax());
-                break;
-            case 2:
-                Point2D a1,b1,c1;
-                a1 = inputP2D("Inserisci le coordinate del punto a: ");
-                b1 = inputP2D("Inserisci le coordinate del punto b: ");
-                c1 = inputP2D("Inserisci le coordinate del putno c: ");
-                
-                a = new Triangolo(a1,b1,c1);
-                break;
-            default:
-                System.err.println("Errore! Figura inesistente.");
-                //a = null;
-                System.exit(1);
-                break;
+        BoundingBox a = BoxFigure.scelta(figura1);
+        if(a == null){
+            System.err.println("Errore! Figura inesistente."); 
+            System.exit(1);
         }
         
         figura2 = inputI("Inserisci la seconda figura: ");
-        BoundingBox b = null;
-        switch(figura2){
-            case 0:
-                double raggio = inputD("Inserisci il raggio: ");
-                Point2D centro = inputP2D("Inserisci le coordinate del centro: ");
-                b = new Cerchio(centro.getX(), centro.getY(), raggio);
-                //System.out.println(centro.getX()+""+centro.getY());
-                break;
-            case 1:
-                double lato = inputD("Inserisci il lato: ");
-                Point2D min = inputP2D("Inserisci le coordinate del punto: ");
-                b = new Quadrato(lato, min);
-                //System.out.println(a.calcMax());
-                break;
-            case 2:
-                Point2D a1,b1,c1;
-                a1 = inputP2D("Inserisci le coordinate del punto a: ");
-                b1 = inputP2D("Inserisci le coordinate del punto b: ");
-                c1 = inputP2D("Inserisci le coordinate del putno c: ");
-                
-                b = new Triangolo(a1,b1,c1);
-                break;
-            default:
-                System.err.println("Errore! Figura inesistente.");
-                //b = null;
-                System.exit(2);
-                break;
+        BoundingBox b = BoxFigure.scelta(figura2);
+        if(b == null){
+            System.err.println("Errore! Figura inesistente.");
+            System.exit(2);
         }
         
         System.out.println(a.getMax());
+        System.out.println(b.getMax());
         /*
         Cerchio uno = new Cerchio(4,4,10);
         Cerchio due = new Cerchio(7,1,2);
@@ -116,5 +71,34 @@ public class BoxFigure {
         System.out.println("---------------------------------");
 
     }
+     private static BoundingBox scelta(int scelta){
+         BoundingBox b = null;
+        switch(scelta){
+            case 0:
+                double raggio = inputD("Inserisci il raggio: ");
+                Point2D centro = inputP2D("Inserisci le coordinate del centro: ");
+                return new Cerchio(centro.getX(), centro.getY(), raggio);
+                //System.out.println(centro.getX()+""+centro.getY());
+                
+            case 1:
+                double lato = inputD("Inserisci il lato: ");
+                Point2D min = inputP2D("Inserisci le coordinate del punto: ");
+                return new Quadrato(lato, min);
+                //System.out.println(a.calcMax());
+                
+            case 2:
+                Point2D a1,b1,c1;
+                a1 = inputP2D("Inserisci le coordinate del punto a: ");
+                b1 = inputP2D("Inserisci le coordinate del punto b: ");
+                c1 = inputP2D("Inserisci le coordinate del putno c: ");
+                
+                return new Triangolo(a1,b1,c1);
+                
+            default:
+                System.err.println("Errore! Figura inesistente.");
+                //b = null;
+                return null;
+        }
+     }
     
 }
