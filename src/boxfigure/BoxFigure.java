@@ -40,13 +40,20 @@ public class BoxFigure {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         
-        if(figura1 == 0 && figura2 == 0){
+        if((figura1 == 0 && figura2 == 0)||(figura2 == 0 && figura1 ==0)){
             disenga p = new disenga((Cerchio)a,(Cerchio)b);
             f.add(p);
-            
         }
-        else if(figura1 == 0 && figura2 == 2){
+        else if((figura1 == 0 && figura2 == 2)){
             disenga p = new disenga((Cerchio)a,(Triangolo)b);
+            f.add(p);
+        }
+        else if(figura1 == 2 && figura1 == 0){
+            disenga p = new disenga((Triangolo)a,(Cerchio)b);
+            f.add(p);
+        }
+        else if(figura1 == 0 && figura2 == 1){
+            disenga p = new disenga((Cerchio)a,(Quadrato)b);
             f.add(p);
         }
         

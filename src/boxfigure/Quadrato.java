@@ -29,4 +29,8 @@ public class Quadrato extends BoundingBox {
         return punto;
     }
     
+    public double getLato(){
+        return this.lato;
+    }
+    
 }
