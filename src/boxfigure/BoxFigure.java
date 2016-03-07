@@ -36,32 +36,12 @@ public class BoxFigure {
         else
             System.out.println("La figura 1 NON contiente la figura 2");
         
-        JFrame f = new JFrame("Title");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
-        if((figura1 == 0 && figura2 == 0)||(figura2 == 0 && figura1 ==0)){
-            disenga p = new disenga((Cerchio)a,(Cerchio)b);
-            f.add(p);
-        }
-        else if((figura1 == 0 && figura2 == 2)){
-            disenga p = new disenga((Cerchio)a,(Triangolo)b);
-            f.add(p);
-        }
-        else if(figura1 == 2 && figura1 == 0){
-            disenga p = new disenga((Triangolo)a,(Cerchio)b);
-            f.add(p);
-        }
-        else if(figura1 == 0 && figura2 == 1){
-            disenga p = new disenga((Cerchio)a,(Quadrato)b);
-            f.add(p);
-        }
+        BoxFigure.disegna(figura1, figura2, a, b);
         
         /*disenga p = new disenga((Cerchio)new Cerchio(7,5,5),(Triangolo)new Triangolo(new Point2D(3,4), new Point2D(7,4),new Point2D(5,8)));
         f.add(p);
         */
-        f.setSize(400,250);
-        f.setVisible(true);
+        
         
         
         
@@ -109,6 +89,30 @@ public class BoxFigure {
         System.out.println("---------------------------------");
 
     }
+     private static void disegna(int figura1, int figura2, BoundingBox a, BoundingBox b){
+        JFrame f = new JFrame("Disegno :D");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        if((figura1 == 0 && figura2 == 0)||(figura2 == 0 && figura1 ==0)){
+            disenga p = new disenga((Cerchio)a,(Cerchio)b);
+            f.add(p);
+        }
+        else if((figura1 == 0 && figura2 == 2)){
+            disenga p = new disenga((Cerchio)a,(Triangolo)b);
+            f.add(p);
+        }
+        else if(figura1 == 2 && figura1 == 0){
+            disenga p = new disenga((Triangolo)a,(Cerchio)b);
+            f.add(p);
+        }
+        else if(figura1 == 0 && figura2 == 1){
+            disenga p = new disenga((Cerchio)a,(Quadrato)b);
+            f.add(p);
+        }
+        
+        f.setSize(400,250);
+        f.setVisible(true);
+     }
      private static BoundingBox scelta(int scelta){
         switch(scelta){
             case 0:
